@@ -25,11 +25,15 @@ jobs:
         run: node ./src/public/cron-test.js # Запускаем ваш скрипт
 
       - name: Показать содержимое лога
-        run: cat ./public/cron-test.log || echo "Лог-файл отсутствует"
+        run: |
+          if [ -f "./public/cron-test.log" ]; then
+            cat ./public/cron-test.log
+          else
+            echo "Лог-файл отсутствует"
+          fi
 
-              - name: Upload log file
+      - name: Upload log file
         uses: actions/upload-artifact@v4
         with:
           name: cron-test-log
           path: ./public/cron-test.log
-
