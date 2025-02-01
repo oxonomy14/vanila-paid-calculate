@@ -23,3 +23,13 @@ jobs:
 
       - name: Run script
         run: node ./src/public/cron-test.js # Запускаем ваш скрипт
+
+      - name: Показать содержимое лога
+        run: cat ./public/cron-test.log || echo "Лог-файл отсутствует"
+
+              - name: Upload log file
+        uses: actions/upload-artifact@v4
+        with:
+          name: cron-test-log
+          path: ./public/cron-test.log
+
