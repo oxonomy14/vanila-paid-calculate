@@ -80,7 +80,8 @@ const formData = {
 
 let exchangeRate = null; // Глобальная переменная
 
-fetch('public/exprates.xml')
+//fetch('public/exprates.xml')
+fetch('https://vipchanger.com/res/xml/exprates.xml')
   .then(response => response.text())
   .then(xmlText => {
     const parser = new DOMParser();
