@@ -2,7 +2,7 @@ name: Run Cron Job
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Запуск каждые 5 минут
+    - cron: '*/5 * * * *' # Запуск каждые 5 минут
   workflow_dispatch: # Позволяет запустить вручную через GitHub Actions
 
 jobs:
@@ -11,15 +11,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # Загружаем код репозитория
+        uses: actions/checkout@v4 # Загружаем код репозитория
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # Укажите нужную версию Node.js
+          node-version: 18 # Укажите нужную версию Node.js
 
       - name: Install dependencies
-        run: npm install  # Установит зависимости из package.json (если есть)
+        run: npm install # Установит зависимости из package.json (если есть)
 
       - name: Run script
-        run: node ./public/cron-test.js  # Запускаем ваш скрипт
+        run: node ./src/public/cron-test.js # Запускаем ваш скрипт
