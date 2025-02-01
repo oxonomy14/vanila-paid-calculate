@@ -1,6 +1,6 @@
 let users = []; // Глобальная переменная
 
-fetch('../js/users.json')
+fetch('./users.json')
   .then(response => response.json())
   .then(data => {
     users = data; // Записываем загруженные данные
