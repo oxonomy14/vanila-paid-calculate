@@ -1,12 +1,60 @@
-let users = []; // Глобальная переменная
+// let users = []; // Глобальная переменная
 
-fetch('public/users.json')
-  .then(response => response.json())
-  .then(data => {
-    users = data; // Записываем загруженные данные
-    console.log('Данные загружены:', users);
-  })
-  .catch(error => console.error('Ошибка загрузки JSON:', error));
+// fetch('public/users.json')
+//   .then(response => response.json())
+//   .then(data => {
+//     users = data; // Записываем загруженные данные
+//     console.log('Данные загружены:', users);
+//   })
+//   .catch(error => console.error('Ошибка загрузки JSON:', error));
+
+const users = [
+  {
+    username: 'Анатолий Анатолич',
+    email: 'test@gmail.com',
+    price: '1600',
+    titleCourse: 'учебная сессия',
+    opt: '3',
+    priceOpt: '1200',
+    teacher: 'Екатерина Ярская',
+  },
+  {
+    username: 'Яна Яламова',
+    email: 'yasmina75713@gmail.com',
+    price: '1600',
+    titleCourse: 'учебная сессия',
+    opt: '3',
+    priceOpt: '1200',
+    teacher: 'Екатерина Ярская',
+  },
+  {
+    username: 'Инна Козлова',
+    email: 'mary-bizness06@mail.ru',
+    price: '3000',
+    titleCourse: 'психоанализ',
+    opt: '',
+    priceOpt: '',
+    teacher: 'Павел Дементьев',
+  },
+  {
+    username: 'Анастасия Чиверда',
+    email: 'n-chiverda@mail.ru',
+    price: '2500',
+    titleCourse: 'психоанализ',
+    opt: '',
+    priceOpt: '',
+    teacher: 'Павел Дементьев',
+  },
+  {
+    username: 'Татьяна Левашова',
+    email: 'tanyafedotova2601@yandex.ru',
+    price: '2500',
+    titleCourse: 'психоанализ',
+    opt: '',
+    priceOpt: '',
+    teacher: 'Павел Дементьев',
+  },
+];
 
 const STORAGE_KEY = 'feedback-form-state';
 
