@@ -1,6 +1,6 @@
 let users = []; // Глобальная переменная
 
-fetch('/src/public/users.json')
+fetch('public/users.json')
   .then(response => response.json())
   .then(data => {
     users = data; // Записываем загруженные данные
@@ -32,7 +32,7 @@ const formData = {
 
 let exchangeRate = null; // Глобальная переменная
 
-fetch('/src/public/exprates.xml')
+fetch('public/exprates.xml')
   .then(response => response.text())
   .then(xmlText => {
     const parser = new DOMParser();
