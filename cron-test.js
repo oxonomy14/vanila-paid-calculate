@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Путь к файлу лога
-const logFile = path.join(__dirname, 'cron-test.log');
+// Путь к лог-файлу в public/
+const logFile = path.join(__dirname, '../public/cron-test.log');
 const logMessage = `[${new Date().toISOString()}] ✅ CRON запущен!\n`;
 
 // Запись в файл
