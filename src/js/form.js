@@ -73,15 +73,9 @@ const formData = {
 };
 
 //! Парсим xml обменника
-//fetch('http://localhost:3000/proxy');
-// fetch(
-//   'https://cors-anywhere.herokuapp.com/https://vipchanger.com/res/xml/exprates.xml'
-// )
 
 let exchangeRate = null; // Глобальная переменная
 
-//fetch('public/exprates.xml')
-//fetch('https://vipchanger.com/res/xml/exprates.xml')
 fetch('http://localhost:3000/proxy/exprates')
   .then(response => response.text())
   .then(xmlText => {
