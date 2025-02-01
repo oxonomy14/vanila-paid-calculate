@@ -1,29 +1,12 @@
 let users = []; // Глобальная переменная
 
-// fetch('./users.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     users = data; // Записываем загруженные данные
-//     console.log(users);
-//   })
-//   .catch(error => console.error('Ошибка загрузки:', error));
-
-fetch('/public/users.json')
+fetch('/src/public/users.json')
   .then(response => response.json())
   .then(data => {
     users = data; // Записываем загруженные данные
     console.log('Данные загружены:', users);
   })
   .catch(error => console.error('Ошибка загрузки JSON:', error));
-
-// import fs from 'fs';
-
-// const data = fs.readFileSync('./users.json', 'utf8');
-// const users = JSON.parse(data);
-// console.log(users);
-
-// const data = require('users.json'); // Путь к файлу
-// console.log(data);
 
 const STORAGE_KEY = 'feedback-form-state';
 
@@ -49,7 +32,7 @@ const formData = {
 
 let exchangeRate = null; // Глобальная переменная
 
-fetch('/public/exprates.xml')
+fetch('/src/public/exprates.xml')
   .then(response => response.text())
   .then(xmlText => {
     const parser = new DOMParser();
