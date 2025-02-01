@@ -1,18 +1,18 @@
-let users = []; // Глобальная переменная
+//let users = []; // Глобальная переменная
 
-fetch('./users.json')
-  .then(response => response.json())
-  .then(data => {
-    users = data; // Записываем загруженные данные
-    console.log(users);
-  })
-  .catch(error => console.error('Ошибка загрузки:', error));
+// fetch('./users.json')
+//   .then(response => response.json())
+//   .then(data => {
+//     users = data; // Записываем загруженные данные
+//     console.log(users);
+//   })
+//   .catch(error => console.error('Ошибка загрузки:', error));
 
-// import fs from 'fs';
+import fs from 'fs';
 
-// const data = fs.readFileSync('./users.json', 'utf8');
-// const users = JSON.parse(data);
-// console.log(users);
+const data = fs.readFileSync('./users.json', 'utf8');
+const users = JSON.parse(data);
+console.log(users);
 
 // const data = require('users.json'); // Путь к файлу
 // console.log(data);
